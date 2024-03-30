@@ -2,11 +2,11 @@
 import ContactList from "./components/ContactList/ContactList.jsx"
 import './App.css'
 import ContactForm from './components/ContactForm/ContactForm'
-import { useState } from "react"
+
 
 import SearchBox from "./components/SearchBox/SearchBox.jsx"
 import css from "../src/app.module.css"
-import { useSelector } from "react-redux"
+
 
 // const Phonebook = [
 //   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -31,7 +31,7 @@ function App() {
 
 
 
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   
   // const addUser = (newUser) => {
   //   const newContact={id:nanoid(), ...newUser}
@@ -46,13 +46,13 @@ function App() {
   // }
 
   // const searchUser = user.filter((contacts)=>contacts.name.toLowerCase().includes(search.toLowerCase()))
-const selectNameFilter =useSelector((state)=>state.filters.name)
+
   return (
     <div className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm  />
-      <SearchBox value={search}  />
-      <ContactList Phonebook={selectNameFilter}  />
+      <SearchBox  />
+      <ContactList  />
 </div>
 
   )

@@ -8,8 +8,8 @@ const slice = createSlice(
             name:""
         },
         reducers: {
-            selectNameFilter (state, action) {
-                state.filters.name = state.filters.name.filter((contacts)=>contacts.name.toLowerCase().includes(action.payload.name.toLowerCase()))
+            selectNameFilter(state, action) {
+                state.name = action.payload;
 }
         }
     }

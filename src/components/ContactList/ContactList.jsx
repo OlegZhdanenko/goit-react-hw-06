@@ -1,15 +1,17 @@
 import { useSelector } from "react-redux"
 import Contact from "../Contact/Contact.jsx"
 import css from "../ContactList/ContactList.module.css"
-export default function ContactList({  onDelete }) {
+export default function ContactList() {
     const value = useSelector((state) => state.contacts.items)
-    console.log(value);
+    // console.log(value);
+    const searchName = useSelector((state) => state.filters.name)
+     const searchUser = value.filter((contacts)=>contacts.name.toLowerCase().includes(searchName.toLowerCase()))
     return (
      value &&  <ul className={css.list}>
             {
-                value.map((item) =>
+                searchUser.map((item) =>
                     <li key={item.id}>
-                        <Contact data={item} onDelete={onDelete} />
+                        <Contact data={item}  />
                 </li>)
             }
         </ul>
